@@ -9,8 +9,11 @@ import plotly.express as px
 url = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.csv"
 df = pd.read_csv(url, parse_dates=["date"])
 
-# Filter to 4 countries
-countries = ["United States", "United Kingdom", "Germany", "Brazil"]
+# Filter to countries
+countries = [
+    "United States", "United Kingdom", "Germany", "Brazil",
+    "Canada", "Mexico", "Ireland", "China", "Russia", "Australia"
+]
 df = df[df["location"].isin(countries)]
 
 # Chart 1 — Trends over time
